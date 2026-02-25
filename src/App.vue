@@ -1,5 +1,17 @@
 <template>
   <div class="smooth-scroll">
+    <!-- Floating Bubbles Background -->
+    <div class="bubbles-container">
+      <div class="bubble bubble-1"></div>
+      <div class="bubble bubble-2"></div>
+      <div class="bubble bubble-3"></div>
+      <div class="bubble bubble-4"></div>
+      <div class="bubble bubble-5"></div>
+      <div class="bubble bubble-6"></div>
+      <div class="bubble bubble-7"></div>
+      <div class="bubble bubble-8"></div>
+    </div>
+
     <!-- Navigation Header -->
     <nav class="fixed top-0 w-full h-15 bg-gradient-to-r from-blue-light via-blue-sky to-blue-light border-b-2 border-gray-400 rounded-b-lg z-50 shadow-md">
       <div class="flex items-center justify-center gap-2.5 mt-3 ml-2.5 mb-2.5">
@@ -16,25 +28,47 @@
 
     <!-- About Section -->
     <section id="about" class="mx-auto max-w-6xl px-4 mb-6">
-      <div class="bg-white bg-opacity-80 rounded-lg shadow-md p-8">
+      <div class="bg-white bg-opacity-50 rounded-lg shadow-md p-8">
         <div class="flex flex-col md:flex-row gap-8">
           <div class="flex-1">
             <h1 class="text-6xl font-bold gradient-text mb-8">Finn Skattum</h1>
             <p class="bg-blue-light text-blue-primary font-bold text-lg p-3 rounded-lg shadow-sm max-w-2xl">
-              nsrnreuonhwroibnwrjobnwroibguerbjergbe qorubnadkjbnekjbwke jbn ujerbhkejrbnoueqrbnejq wbhoieqbnelwjbhujqebnuqerbhljewrbnoiuewtbnlwej tbhlejwtbnuioqetbgnweljbnhoiewjbn lswjertbjhoi
+              I am a 19-year-old student with a passion for programming and technology. I have been coding for a couple of years and have experience in various programming languages and frameworks. I am always eager to learn new technologies and take on new challenges. My goal is to create innovative and impactful projects that can make a difference in the world.
             </p>
           </div>
-          <div class="flex-1 flex justify-center">
-            <img src="/portrait.jpg" alt="portrait of Finn Skattum" class="w-48 h-auto rounded-lg shadow-lg border-4 border-blue-accent">
+          <div class="flex-1 flex justify-center mt-11">
+            <img src="/pfp.jpg" alt="portrait of Finn Skattum" class="w-60 h-60 object-cover rounded-lg shadow-lg border-4 border-blue-accent">
           </div>
         </div>
 
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-blue-extra p-5 rounded-lg shadow-md">
-            <p class="text-blue-primary font-bold text-lg">Goals:</p>
+            <p class="text-blue-primary font-bold text-lg mb-3">Goals:</p>
+            <div class="text-blue-primary text-sm space-y-2">
+              <p>I am passionate about continuous learning and always eager to explore new technologies and programming concepts.</p>
+              <p>My main goal is to constantly improve my programming skills and become a better developer through hands-on projects and real-world experience.</p>
+            </div>
           </div>
           <div class="bg-blue-extra p-5 rounded-lg shadow-md">
-            <p class="text-blue-primary font-bold text-lg">Knowledge:</p>
+            <p class="text-blue-primary font-bold text-lg mb-3">Knowledge:</p>
+            <div class="text-blue-primary text-sm space-y-2">
+              <div>
+                <p class="font-bold">Programming Languages:</p>
+                <p>Java, JavaScript, TypeScript, HTML and CSS</p>
+              </div>
+              <div>
+                <p class="font-bold">Frameworks:</p>
+                <p>React, Vue and Tailwind CSS</p>
+              </div>
+              <div>
+                <p class="font-bold">Databases:</p>
+                <p>SQLite</p>
+              </div>
+              <div>
+                <p class="font-bold">Other:</p>
+                <p>Solid knowledge in Unity, C# and MCP-servers</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -42,10 +76,10 @@
 
     <!-- Projects Section -->
     <section id="projects" class="mx-auto max-w-6xl px-4 mb-6">
-      <div class="bg-white bg-opacity-80 rounded-lg shadow-md p-8">
+      <div class="bg-white bg-opacity-50 rounded-lg shadow-md p-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="project in projects" :key="project.id" class="bg-blue-light rounded-lg shadow-lg p-6 hover:bg-blue-500 transition-all duration-200">
-            <h2 class="text-xl font-bold text-blue-primary mb-4">Projekt: {{ project.id }}</h2>
+          <div v-for="project in projects" :key="project.id" class="group bg-blue-light rounded-lg shadow-lg p-6 hover:bg-blue-500 transition-all duration-200">
+            <h2 class="text-xl font-bold text-blue-primary mb-4 group-hover:text-white transition-colors duration-200">Project: {{ project.id }}</h2>
             <div class="flex flex-col gap-4">
               <img :src="project.image" alt="Project image" class="w-full h-40 object-cover rounded-lg shadow-md hover:blur-sm transition-all duration-200 cursor-pointer" @click="openProject(project, 'video')">
               <div class="bg-white p-3 rounded-lg shadow-md hover:bg-gray-200 hover:text-blue-primary transition-all duration-200 cursor-pointer" @click="openProject(project, 'text')">
@@ -122,7 +156,7 @@
 
     <!-- Footer -->
     <footer class="bg-blue-500 text-blue-pale text-center font-bold py-5 mt-6 rounded-t-lg">
-      <p>&copy; 2023 Finn Skattum. All rights reserved.</p>
+      <p>&copy; 2026 Finn Skattum. All rights reserved.</p>
     </footer>
   </div>
 </template>
@@ -131,12 +165,12 @@
 import { ref, onMounted } from 'vue'
 
 const projects = ref([
-  { id: 1, image: '/hemsida.png', video: '/videos/project-1.mp4', description: 'This a project where i made a niqfq fqfq sqfqf sqfqwqs fqwfqs qfqdq qefqcs qefqcq qvevqvqd qevqevdqev vqevdqvd qwfwef wefwfd fwefdwv fwfwfwf fwefwfdf fwfwwdwe' },
-  { id: 2, image: '/hemsida.png', video: '/videos/project-2.mp4', description: 'This a project where i made a niqfq fqfq sqfqf sqfqwqs fqwfqs qfqdq qefqcs qefqcq qvevqvqd qevqevdqev vqevdqvd qwfwef wefwfd fwefdwv fwfwfwf fwefwfdf fwfwwdwe' },
-  { id: 3, image: '/hemsida.png', video: '/videos/project-3.mp4', description: 'This a project where i made a niqfq fqfq sqfqf sqfqwqs fqwfqs qfqdq qefqcs qefqcq qvevqvqd qevqevdqev vqevdqvd qwfwef wefwfd fwefdwv fwfwfwf fwefwfdf fwfwwdwe' },
-  { id: 4, image: '/hemsida.png', video: '/videos/project-4.mp4', description: 'This a project where i made a niqfq fqfq sqfqf sqfqwqs fqwfqs qfqdq qefqcs qefqcq qvevqvqd qevqevdqev vqevdqvd qwfwef wefwfd fwefdwv fwfwfwf fwefwfdf fwfwwdwe' },
-  { id: 5, image: '/hemsida.png', video: '/videos/project-5.mp4', description: 'This a project where i made a niqfq fqfq sqfqf sqfqwqs fqwfqs qfqdq qefqcs qefqcq qvevqvqd qevqevdqev vqevdqvd qwfwef wefwfd fwefdwv fwfwfwf fwefwfdf fwfwwdwe' },
-  { id: 6, image: '/hemsida.png', video: '/videos/project-6.mp4', description: 'This a project where i made a niqfq fqfq sqfqf sqfqwqs fqwfqs qfqdq qefqcs qefqcq qvevqvqd qevqevdqev vqevdqvd qwfwef wefwfd fwefdwv fwfwfwf fwefwfdf fwfwwdwe' },
+  { id: 'Portfolio', image: '/Portfolio.png', video: '/videos/project-1.mp4', description: 'My personal portfolio website built with Vue.js and Tailwind CSS. Showcasing my skills, projects, and experience in web development.' },
+  { id: 'Webbshopen', image: '/FidgetShop.png', video: '/videos/project-2.mp4', description: 'A fidget shop built with modern web technologies. Features product browsing, shopping cart functionality, and secure checkout.' },
+  { id: 'Api-Page', image: '/WebbShop.png', video: 'WebbShopVid.mp4', description: 'A web application that integrates Steam API with Azure backend. Demonstrates API integration, cloud services, and dynamic content fetching from external data sources.' },
+  { id: 'Game', image: '/Game.png', video: 'GameVid.mp4', description: 'An interactive game built with Unity. Features engaging game mechanics, cool animations, and immersive gameplay experience.' },
+  { id: 'Ai-Camera', image: '/Ai.png', video: 'AiVid.mp4', description: 'An AI-powered hand sign detection application built with a pre-trained machine learning model and Jetson Nano. Enables real-time hand gesture recognition for interactive applications.' },
+  { id: 'Coming-Soon', image: '/Comingsoon.png', video: '/videos/project-6.mp4', description: 'Exciting new project in development. Stay tuned for updates!' },
 ])
 
 const isModalOpen = ref(false)
@@ -202,10 +236,139 @@ onMounted(() => {
   document.querySelectorAll('section, .pt-40').forEach(el => {
     observer.observe(el)
   })
+
+  // Disable copying
+  document.addEventListener('copy', (e) => {
+    e.preventDefault()
+  })
+  
+  document.addEventListener('cut', (e) => {
+    e.preventDefault()
+  })
+  
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault()
+  })
+  
+  document.addEventListener('selectstart', (e) => {
+    e.preventDefault()
+  })
+  
+  document.addEventListener('mousedown', (e) => {
+    if (e.button === 2) {
+      e.preventDefault()
+    }
+  })
 })
 </script>
 
 <style scoped>
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Bubbles Background */
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(88, 128, 255, 0.2));
+  border-radius: 50%;
+  opacity: 0.6;
+  bottom: -100px;
+}
+
+.bubble-1 {
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.bubble-2 {
+  width: 40px;
+  height: 40px;
+  left: 20%;
+  animation: float 10s infinite ease-in-out 1s;
+}
+
+.bubble-3 {
+  width: 80px;
+  height: 80px;
+  left: 30%;
+  animation: float 12s infinite ease-in-out 0.5s;
+}
+
+.bubble-4 {
+  width: 50px;
+  height: 50px;
+  left: 45%;
+  animation: float 9s infinite ease-in-out 2s;
+}
+
+.bubble-5 {
+  width: 70px;
+  height: 70px;
+  left: 60%;
+  animation: float 11s infinite ease-in-out 1.5s;
+}
+
+.bubble-6 {
+  width: 45px;
+  height: 45px;
+  left: 75%;
+  animation: float 8.5s infinite ease-in-out 0.8s;
+}
+
+.bubble-7 {
+  width: 65px;
+  height: 65px;
+  left: 85%;
+  animation: float 10.5s infinite ease-in-out 2.2s;
+}
+
+.bubble-8 {
+  width: 55px;
+  height: 55px;
+  left: 50%;
+  animation: float 9.5s infinite ease-in-out 1.2s;
+}
+
+@keyframes float {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(30px);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
 @keyframes buttonClick {
   0% {
     transform: scale(1);
@@ -286,7 +449,7 @@ onMounted(() => {
 .modal-close:hover {
   background-color: #4666cc;
   box-shadow: inset 0 0 5px #1c2f6d;
-  border-bottom: none;
+  border-bottom: 3px solid #4666cc;
 }
 
 section {
